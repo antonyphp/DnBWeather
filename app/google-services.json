@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "716235982332",
+    "project_id": "dnbweather"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716235982332:android:0fd222dbcef54b43",
+        "android_client_info": {
+          "package_name": "no.dnb.dnbweather"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716235982332-bveb0lla50jrevpdg7416vrqh2glivgf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "no.dnb.dnbweather",
+            "certificate_hash": "2C6A31B8B38A7856E0A6B9AB87CDD64D3F3467A1"
+          }
+        },
+        {
+          "client_id": "716235982332-8fblufcvmsuqb232mq3m7afv84errtmi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuuyPVdSqxfauC6Ti4wzIsP4aAbRqN9dI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

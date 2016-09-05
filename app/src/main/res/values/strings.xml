@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">DnB Weather</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="nav_item_overview">Overview</string>
+    <string name="nav_item_daily_forecasts">Daily Forecasts</string>
+    <string name="nav_item_hourly_forecasts">Hourly Forecasts</string>
+
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_overview</item>
+        <item>@string/nav_item_daily_forecasts</item>
+        <item>@string/nav_item_hourly_forecasts</item>
+    </string-array>
+
+    <string name="title_overview">Overview</string>
+    <string name="title_daily_forecast">Daily Forecasts</string>
+    <string name="title_hourly_forecast">Hourly Forecasts</string>
+
+    <string name="loading">Loading</string>
+
+</resources>
