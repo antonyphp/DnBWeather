@@ -9,8 +9,9 @@ android {
         applicationId "no.dnb.dnbweather"
         minSdkVersion 19
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
+        manifestPlaceholders = [HOCKEYAPP_APP_ID: "80b3a0edab4240bf9fd1c6c87a3ceb0e"]
     }
     buildTypes {
         release {
@@ -57,6 +58,9 @@ dependencies {
     //ButterKnife
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    //hockey App
+    compile 'net.hockeyapp.android:HockeySDK:5.1.0'
 
 
 }
