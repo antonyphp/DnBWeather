@@ -2,40 +2,47 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="no.dnb.toolbartest">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:name=".application.WeatherApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Weather Active"
         android:supportsRtl="true"
         android:theme="@style/WeatherMaterialTheme">
         <activity
             android:name=".activity.WeatherHomeActivity"
-            android:screenOrientation="portrait"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-
-       <activity android:name=".activity.OAuthLoginActivity"
-           android:screenOrientation="portrait">
-       </activity>
-        
-        <activity android:name=".activity.SplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme">
+            android:theme="@style/AppTheme.NoActionBar">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+        <activity
+            android:name=".activity.OAuthLoginActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+        </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCG1MtUF8Wcq7GCEqvno64rNsDVkBHFqak"/>
+            android:value="AIzaSyCG1MtUF8Wcq7GCEqvno64rNsDVkBHFqak" />
+
+        <meta-data
+            android:name="net.hockeyapp.android.appIdentifier"
+            android:value="${HOCKEYAPP_APP_ID}" />
     </application>
 
 </manifest>

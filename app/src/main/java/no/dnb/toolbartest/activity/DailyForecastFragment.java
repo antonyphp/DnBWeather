@@ -8,12 +8,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import javax.inject.Inject;
 
 import no.dnb.toolbartest.R;
-import no.dnb.toolbartest.application.WeatherApplication;
 import no.dnb.toolbartest.adapter.DailyWeatherAdapter;
+import no.dnb.toolbartest.application.WeatherApplication;
 import no.dnb.toolbartest.model.dailyweather.DailyWeatherResponse;
 import no.dnb.toolbartest.utilities.Constants;
 import no.dnb.toolbartest.webservice.WeatherApiInterface;
@@ -61,9 +62,12 @@ public class DailyForecastFragment extends BaseFragment {
             @Override
             public void onResponse(Call<DailyWeatherResponse> call, Response<DailyWeatherResponse> response) {
                 DailyWeatherResponse dailyWeatherResponse = response.body();
-                mAdapter = new DailyWeatherAdapter(getContext(),dailyWeatherResponse);
-                mRecyclerView.setAdapter(mAdapter);
-
+                if (dailyWeatherResponse == null) {
+                    Toast.makeText(getActivity(), "Oops.. searched city weather is unavailable. Sorry :(", Toast.LENGTH_LONG).show();
+                } else {
+                    mAdapter = new DailyWeatherAdapter(getContext(),dailyWeatherResponse);
+                    mRecyclerView.setAdapter(mAdapter);
+                }
             }
 
             @Override

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import javax.inject.Inject;
 
@@ -69,9 +70,12 @@ public class WeatherOverviewFragment extends BaseFragment {
             @Override
             public void onResponse(Call<WeatherOverviewResponse> call, Response<WeatherOverviewResponse> response) {
                 WeatherOverviewResponse weatherOverviewResponse = response.body();
-                mAdapter = new WeatherOverviewAdapter(getContext(), weatherOverviewResponse, mDatasetTypes);
-                mRecyclerView.setAdapter(mAdapter);
-
+                if (weatherOverviewResponse == null) {
+                    Toast.makeText(getActivity(), "Oops.. searched city weather is unavailable. Sorry :(", Toast.LENGTH_LONG).show();
+                } else {
+                    mAdapter = new WeatherOverviewAdapter(getContext(), weatherOverviewResponse, mDatasetTypes);
+                    mRecyclerView.setAdapter(mAdapter);
+                }
             }
 
             @Override

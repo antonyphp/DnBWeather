@@ -1,8 +1,6 @@
 package no.dnb.toolbartest.di.components;
 
 
-import android.content.SharedPreferences;
-
 
 import javax.inject.Singleton;
 

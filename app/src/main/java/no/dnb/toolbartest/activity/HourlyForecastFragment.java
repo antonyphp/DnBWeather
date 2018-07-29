@@ -8,10 +8,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import javax.inject.Inject;
 
 import no.dnb.toolbartest.R;
+import no.dnb.toolbartest.adapter.WeatherOverviewAdapter;
 import no.dnb.toolbartest.application.WeatherApplication;
 import no.dnb.toolbartest.adapter.HourlyWeatherAdapter;
 import no.dnb.toolbartest.model.hourlyweather.HourlyWeatherResponse;
@@ -56,9 +58,12 @@ public class HourlyForecastFragment extends BaseFragment {
             @Override
             public void onResponse(Call<HourlyWeatherResponse> call, Response<HourlyWeatherResponse> response) {
                 HourlyWeatherResponse hourlyWeatherResponse = response.body();
-                mAdapter = new HourlyWeatherAdapter(getContext(),hourlyWeatherResponse);
-                mRecyclerView.setAdapter(mAdapter);
-
+                if (hourlyWeatherResponse == null) {
+                    Toast.makeText(getActivity(), "Oops.. searched city weather is unavailable. Sorry :(", Toast.LENGTH_LONG).show();
+                } else {
+                    mAdapter = new HourlyWeatherAdapter(getContext(),hourlyWeatherResponse);
+                    mRecyclerView.setAdapter(mAdapter);
+                }
             }
 
             @Override
